@@ -1,0 +1,84 @@
+<p *ngIf="isValidFormSubmitted">Valid Form Submitted</p>
+
+<form #picForm="ngForm" (ngSubmit)="onFormSubmitted(picForm)">
+
+  <table>
+    <tr>
+      <td>
+        Id:
+      </td>
+      <td>
+        <input name="id" [ngModel]="picture.id" #id="ngModel">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Width:
+      </td>
+      <td>
+        <input name="width" [ngModel]="picture.width" #width="ngModel">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Height:
+      </td>
+      <td>
+        <input name="height" [ngModel]="picture.height" #height="ngModel">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Grayscale:
+      </td>
+      <td>
+        <input type="checkbox" name="grayscale" [ngModel]="picture.grayscale" #grayscale="ngModel">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Blur:
+      </td>
+      <td>
+        <input type="checkbox" name="blur" [ngModel]="picture.blur" #blur="ngModel">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Blur Setting:
+      </td>
+      <td>
+        <input name="blurSetting" [ngModel]="picture.blurSetting" #blurSetting="ngModel">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        KeyUp Name:
+      </td>
+      <td>
+        <input #aya (keyup)="onAya(aya.value)">
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        {{ ayaName }}
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" height="20"></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <button>Submit</button>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        {{ pictureUrl }}
+      </td>
+    </tr>
+
+  </table>
+
+
+</form>
